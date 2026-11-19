@@ -1,0 +1,435 @@
+/* ==========================================================
+   Porchlight — shared styles
+   A neighborhood internet that feels like a front porch.
+   Each page sets a time of day on <body>: dusk -> evening -> dawn
+   ========================================================== */
+
+/* ---------- Tokens ---------- */
+:root {
+  --cream: #fff4e0;
+  --amber: #ffb347;
+  --rose: #f2a0ae;
+  --panel: rgba(20, 12, 40, 0.6);
+  --sky-top: #2a1f3d;
+  --sky-bottom: #8a4a6e;
+}
+
+/* The sky changes as you walk through the world */
+body.dusk    { --sky-top: #2a1f3d; --sky-bottom: #8a4a6e; }
+body.evening { --sky-top: #120f30; --sky-bottom: #3b3470; }
+body.dawn    { --sky-top: #4a3568; --sky-bottom: #c4687a; }
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--cream);
+  background: linear-gradient(180deg, var(--sky-top), var(--sky-bottom)) fixed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); }
+h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); color: var(--amber); }
+h3 { font-size: 1.35rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--amber); }
+
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+.lede {
+  font-size: 1.3rem;
+  max-width: 34em;
+}
+
+/* ---------- Header + navigation (flexbox) ---------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.brand-light {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 14px 4px rgba(255, 179, 71, 0.7);
+  animation: flicker 4s ease-in-out infinite;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.4rem 1.1rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  border-color: var(--amber);
+  background: rgba(255, 179, 71, 0.15);
+}
+
+/* ---------- Main layout (flexbox) ---------- */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 2rem 3rem;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1 1 320px;
+}
+
+.hero-art {
+  flex: 1 1 240px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-art svg {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+}
+
+/* SVG house colors */
+.house-wall   { fill: #1b1233; stroke: var(--rose); stroke-width: 2; }
+.house-roof   { fill: #3b2457; stroke: var(--rose); stroke-width: 2; }
+.house-door   { fill: #6b3f6e; }
+.house-window { fill: var(--amber); animation: flicker 4s ease-in-out infinite; }
+.house-lamp   { fill: var(--amber); }
+.house-ground { fill: #0e0820; }
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ---------- Cards ---------- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: var(--panel);
+  border: 1px solid rgba(255, 179, 71, 0.35);
+  border-radius: 18px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(255, 179, 71, 0.35);
+}
+
+.card h3 { margin-bottom: 0.2em; }
+.card p  { margin: 0; }
+
+.tag {
+  align-self: flex-start;
+  padding: 0.1rem 0.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: rgba(242, 160, 174, 0.25);
+  border-radius: 999px;
+}
+
+.tag.want { background: rgba(255, 179, 71, 0.25); }
+
+.byline {
+  font-size: 0.9rem;
+  color: var(--rose);
+}
+
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.7rem 1.6rem;
+  font: inherit;
+  font-weight: bold;
+  color: #2a1f3d;
+  background: var(--amber);
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.button:hover {
+  box-shadow: 0 0 22px rgba(255, 179, 71, 0.8);
+}
+
+/* ---------- Details (no-JavaScript interaction) ---------- */
+details summary {
+  cursor: pointer;
+  color: var(--amber);
+}
+
+details p {
+  margin-top: 0.75rem;
+}
+
+/* ---------- Form ---------- */
+.porch-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: var(--panel);
+  border: 1px solid rgba(255, 179, 71, 0.35);
+  border-radius: 18px;
+}
+
+.porch-form label {
+  font-weight: bold;
+}
+
+.porch-form input,
+.porch-form textarea {
+  padding: 0.7rem 1rem;
+  font: inherit;
+  color: var(--cream);
+  background: rgba(255, 244, 224, 0.08);
+  border: 1px solid rgba(255, 244, 224, 0.4);
+  border-radius: 10px;
+}
+
+.porch-form select {
+  padding: 0.7rem 1rem;
+  font: inherit;
+  color: var(--cream);
+  background: #2a1f3d;
+  border: 1px solid rgba(255, 244, 224, 0.4);
+  border-radius: 10px;
+}
+
+.form-status {
+  margin: 0;
+  min-height: 1.7em;
+  color: var(--amber);
+}
+
+/* ---------- Posts added by neighbors ---------- */
+.card.is-new {
+  animation: arrive 1.2s ease-out;
+  border-color: var(--amber);
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.card-done {
+  border-color: rgba(150, 220, 170, 0.6);
+}
+
+.tag.done-tag {
+  background: rgba(150, 220, 170, 0.3);
+}
+
+.card-remove,
+.card-toggle {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.2rem 0.8rem;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--cream);
+  background: transparent;
+  border: 1px solid rgba(255, 244, 224, 0.4);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.card-remove:hover,
+.card-toggle:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+@keyframes arrive {
+  from { box-shadow: 0 0 40px rgba(255, 179, 71, 0.9); transform: translateY(-10px); }
+  to   { box-shadow: 0 0 0 rgba(255, 179, 71, 0); transform: translateY(0); }
+}
+
+/* ---------- Steps and promises ---------- */
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps li {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.25rem;
+  background: var(--panel);
+  border-left: 4px solid var(--amber);
+  border-radius: 12px;
+  counter-increment: step;
+}
+
+.steps li::before {
+  content: "Step " counter(step);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+.promises {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.promises li {
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--rose);
+}
+
+/* ---------- Guided path to the next page ---------- */
+.next-door {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: var(--panel);
+  border: 1px dashed var(--amber);
+  border-radius: 18px;
+}
+
+.next-door p {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  padding: 1.5rem 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.site-footer p { margin: 0; }
+
+/* ---------- Motion ---------- */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  45%      { opacity: 0.85; }
+  50%      { opacity: 1; }
+  70%      { opacity: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  .site-header { padding: 1rem; }
+  main { padding: 1rem; gap: 2.5rem; }
+  .next-door { flex-direction: column; align-items: flex-start; }
+}

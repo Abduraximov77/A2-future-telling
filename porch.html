@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porchlight | The Porch</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="evening">
+
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-light" aria-hidden="true"></span>
+        Porchlight
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">The Gate</a></li>
+          <li><a href="porch.html" aria-current="page">The Porch</a></li>
+          <li><a href="workshop.html">The Workshop</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <section class="section">
+        <p class="eyebrow">Evening &middot; 7:42 PM</p>
+        <h1>Pull up a chair.</h1>
+        <p class="lede">
+          The porch is where neighbors share stories. Each one stays for a week, like a
+          lantern, unless someone keeps it lit by adding their own.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Tonight's lanterns</h2>
+        <div class="cards" id="lantern-list">
+
+          <article class="card">
+            <span class="tag">Hola &middot; Story</span>
+            <h3>Tamales on Saturday</h3>
+            <p class="byline">Abuela Rosa, 3 doors down</p>
+            <p>I'm making forty tamales and I need hands. Bring a story and I'll bring the masa.</p>
+            <details>
+              <summary>Read more</summary>
+              <p>
+                My granddaughter translated this post for me. Now my recipe is travelling
+                to kitchens I'll never see. That makes an old woman very happy.
+              </p>
+            </details>
+          </article>
+
+          <article class="card">
+            <span class="tag">Ch&agrave;o &middot; Thanks</span>
+            <h3>Mr. Okafor called Lagos</h3>
+            <p class="byline">Minh, age 16</p>
+            <p>He's been trying for months to video call his daughter. Today it worked on the first try.</p>
+            <details>
+              <summary>Read more</summary>
+              <p>
+                We practiced on the porch with tea. He taught me how to say good morning
+                in Igbo. I think I got the better trade.
+              </p>
+            </details>
+          </article>
+
+          <article class="card">
+            <span class="tag">Hello &middot; Notice</span>
+            <h3>The garden gate is fixed</h3>
+            <p class="byline">Mrs. Dalton, corner house</p>
+            <p>Thank you to the three neighbors who came with tools. The tomatoes are safe.</p>
+            <details>
+              <summary>Read more</summary>
+              <p>
+                If you want to help next month, the compost bin could use a lid. Light a
+                lantern in the Workshop and we'll find you.
+              </p>
+            </details>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Light a lantern</h2>
+        <form class="porch-form" id="porch-form" action="#" method="post">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" placeholder="Whatever neighbors call you">
+
+          <label for="story">What would you like to say?</label>
+          <textarea id="story" name="story" rows="4" maxlength="400" required placeholder="Write in any language you like. Neighbors can help translate."></textarea>
+
+          <button class="button" type="submit">Place on the porch</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <aside class="next-door">
+        <p>The night is long. Someone in the workshop needs a hand.</p>
+        <a class="button" href="workshop.html">Go to The Workshop &rarr;</a>
+      </aside>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Stories rest for seven days. Nothing is sold. Nothing is tracked.</p>
+      <p><a href="index.html">Back to the gate</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

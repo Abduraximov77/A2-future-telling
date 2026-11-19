@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porchlight | The Workshop</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="dawn">
+
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-light" aria-hidden="true"></span>
+        Porchlight
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">The Gate</a></li>
+          <li><a href="porch.html">The Porch</a></li>
+          <li><a href="workshop.html" aria-current="page">The Workshop</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <section class="section">
+        <p class="eyebrow">Dawn &middot; 6:15 AM</p>
+        <h1>Bring what you know.</h1>
+        <p class="lede">
+          The workshop is where neighbors trade skills. We trade in hours, not money.
+          An hour of your time is worth exactly an hour of anyone else's.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Open on the workbench</h2>
+        <div class="cards" id="workbench-list">
+
+          <article class="card">
+            <span class="tag">Offering</span>
+            <h3>Bike repair</h3>
+            <p class="byline">Marcus &middot; Saturdays</p>
+            <p>Flat tires, loose chains, squeaky brakes. Bring the bike, bring a friend.</p>
+          </article>
+
+          <article class="card">
+            <span class="tag want">Wanted</span>
+            <h3>Help reading a lease</h3>
+            <p class="byline">Fatima &middot; Anytime</p>
+            <p>I'd like a calm second pair of eyes before I sign anything.</p>
+          </article>
+
+          <article class="card">
+            <span class="tag">Offering</span>
+            <h3>R&eacute;sum&eacute; help in Mandarin or English</h3>
+            <p class="byline">Lin &middot; Evenings</p>
+            <p>Let's make your experience sound as strong as it really is.</p>
+          </article>
+
+          <article class="card">
+            <span class="tag want">Wanted</span>
+            <h3>Someone to teach me guitar</h3>
+            <p class="byline">Mr. Okafor &middot; Afternoons</p>
+            <p>I can offer stories and jollof rice in return.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Offer or ask for help</h2>
+        <p>
+          Know how to fix something? Need a hand with something? Put it on the workbench
+          and a neighbor will see it.
+        </p>
+        <form class="porch-form" id="workshop-form" action="#" method="post">
+          <label for="w-name">Your name</label>
+          <input id="w-name" name="name" type="text" placeholder="Whatever neighbors call you">
+
+          <label for="w-kind">I want to&hellip;</label>
+          <select id="w-kind" name="kind">
+            <option value="Offering">Offer help</option>
+            <option value="Wanted">Ask for help</option>
+          </select>
+
+          <label for="w-title">What is it about?</label>
+          <input id="w-title" name="title" type="text" maxlength="60" required placeholder="Example: Math homework help">
+
+          <label for="w-details">Tell neighbors more</label>
+          <textarea id="w-details" name="details" rows="3" maxlength="300" required placeholder="When are you free? What can you give in return?"></textarea>
+
+          <button class="button" type="submit">Put it on the workbench</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="section">
+        <h2>Completed: neighbors helped!</h2>
+        <p>
+          When someone gets help, or finishes helping, they mark the post as done.
+          It moves here so we can celebrate it.
+        </p>
+        <div class="cards" id="done-list">
+          <article class="card card-done">
+            <span class="tag done-tag">Helped &#10003;</span>
+            <h3>Fix the garden gate</h3>
+            <p class="byline">Mrs. Dalton &middot; helped by 3 neighbors</p>
+            <p>Done on Saturday. The tomatoes are safe, and we shared lemonade after.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>How a trade works</h2>
+        <ol class="steps">
+          <li>
+            <h3>Light a lantern</h3>
+            <p>Post what you can offer or what you need, in your own words.</p>
+          </li>
+          <li>
+            <h3>Meet in person</h3>
+            <p>Porchlight only makes the introduction. The real thing happens face to face.</p>
+          </li>
+          <li>
+            <h3>Trade hours</h3>
+            <p>Give an hour, earn an hour. Spend it with anyone on the street.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>What the designer promises</h2>
+        <p>
+          Someone decides who gets to belong in a space like this. As the designer, that
+          person is me, so these are my commitments:
+        </p>
+        <ul class="promises">
+          <li>No ads, no tracking, and no selling of your stories.</li>
+          <li>Text comes first, so it loads on an old phone and a slow connection.</li>
+          <li>Every page works with a screen reader and a keyboard.</li>
+          <li>The neighborhood owns the server, and the neighborhood can change the rules.</li>
+        </ul>
+      </section>
+
+      <aside class="next-door">
+        <p>The sun is up. The light stays on for the next person.</p>
+        <a class="button" href="index.html">Return to the Gate &rarr;</a>
+      </aside>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Porchlight is a speculative design for a future worth living in.</p>
+      <p><a href="porch.html">Back to the porch</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
